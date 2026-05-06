@@ -1,16 +1,44 @@
-## Hi there 👋
+# Hi there 👋
 
-<!--
-**linh404/linh404** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+I'm Linh.
 
-Here are some ideas to get you started:
+Backend-focused developer interested in web systems, APIs, authentication flows, and database-driven applications.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+I also work with Flutter and enjoy exploring different areas of software development.
+
+---
+
+## Tech Stack
+
+![ExpressJS](https://img.shields.io/badge/ExpressJS-black?style=for-the-badge&logo=express)
+![NodeJS](https://img.shields.io/badge/NodeJS-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![ReactJS](https://img.shields.io/badge/ReactJS-20232A?style=for-the-badge&logo=react)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql)
+![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
+![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+
+---
+
+## Projects
+
+- Teaching Task Management System  
+  https://github.com/holyBeastt/ttcs
+
+- Online Course Management App  
+  https://github.com/holyBeastt/flutter_basic_app
+
+---
+
+## GitHub Stats
+
+![stats](https://github-readme-stats.vercel.app/api?username=linh404&show_icons=true&theme=tokyonight)
+
+![top-langs](https://github-readme-stats.vercel.app/api/top-langs/?username=linh404&layout=compact&theme=tokyonight)
+
+---
+
+## Contact
+
+- GitHub: https://github.com/linh404
+- Email: dev27012003@gmail.com
