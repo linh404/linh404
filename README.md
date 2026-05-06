@@ -32,9 +32,9 @@ I also work with Flutter and enjoy exploring different areas of software develop
 
 ## GitHub Stats
 
-![stats](https://github-readme-stats.vercel.app/api?username=linh404&show_icons=true&theme=tokyonight)
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=linh404&show_icons=true&theme=tokyonight&cache_seconds=1800)
 
-![top-langs](https://github-readme-stats.vercel.app/api/top-langs/?username=linh404&layout=compact&theme=tokyonight)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=linh404&layout=compact&theme=tokyonight&cache_seconds=1800)
 
 ---
 
