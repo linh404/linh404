@@ -22,5 +22,6 @@ I also work with Flutter and enjoy exploring different areas of software develop
 
 ## Contact
 
+- Portfolio: https://luuhoanglinh.id.vn
 - GitHub: https://github.com/linh404
 - Email: dev27012003@gmail.com
