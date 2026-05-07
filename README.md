@@ -20,24 +20,6 @@ I also work with Flutter and enjoy exploring different areas of software develop
 
 ---
 
-## Projects
-
-- Teaching Task Management System  
-  https://github.com/holyBeastt/ttcs
-
-- Online Course Management App  
-  https://github.com/holyBeastt/flutter_basic_app
-
----
-
-## GitHub Stats
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=linh404&show_icons=true&theme=tokyonight&cache_seconds=1800)
-
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=linh404&layout=compact&theme=tokyonight&cache_seconds=1800)
-
----
-
 ## Contact
 
 - GitHub: https://github.com/linh404
