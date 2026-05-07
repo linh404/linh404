@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Luu Hoang Linh — Backend Developer</title>
-<meta name="description" content="Backend developer specializing in web systems, REST APIs, authentication, and database-driven applications. Open to opportunities."/>
+<title>Lưu Hoàng Linh | Backend Developer</title>
+<meta name="description" content="Backend Developer experienced in building RESTful APIs and operating production systems on Linux servers with PM2."/>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
 <link rel="stylesheet" href="style.css"/>
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
@@ -22,10 +23,17 @@
     <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="luu-hoang-linh-cv.pdf" target="_blank">CV</a></li>
   </ul>
-  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-    <span></span><span></span><span></span>
-  </button>
+  <div class="nav-actions">
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+      <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></svg>
+      <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </button>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
 
 <div class="mobile-menu" id="mobile-menu">
@@ -34,6 +42,7 @@
   <a href="#projects">Projects</a>
   <a href="#experience">Experience</a>
   <a href="#contact">Contact</a>
+  <a href="v2.pdf" target="_blank">CV</a>
 </div>
 
 <!-- HERO -->
@@ -41,13 +50,43 @@
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
   <div class="container hero-content">
-    <div class="hero-badge"><span class="dot"></span> Available for opportunities</div>
-    <h1 class="hero-name">Luu Hoang<br/><span class="accent">Linh</span></h1>
-    <p class="hero-title"><span id="typing-text">Backend Developer</span><span style="color:var(--accent);animation:pulse 1s infinite">|</span></p>
-    <p class="hero-desc">Backend-focused developer building robust web systems, REST APIs, authentication flows, and data-driven applications. Experienced across the full stack with a systems engineering mindset.</p>
-    <div class="hero-cta">
-      <a href="#projects" class="btn-primary">&#9654; View Projects</a>
-      <a href="#contact" class="btn-secondary">&#9993; Get in Touch</a>
+    <div class="hero-main">
+      <div class="hero-badge"><span class="dot"></span> Available for opportunities</div>
+      <div class="hero-header">
+        <img src="avt.png" alt="Luu Hoang Linh" class="hero-avatar">
+        <h1 class="hero-name">Luu Hoang<br/><span class="accent">Linh</span></h1>
+      </div>
+      <p class="hero-title"><span id="typing-text">Backend Developer</span><span style="color:var(--accent);animation:pulse 1s infinite">|</span></p>
+      <p class="hero-desc">Backend-focused developer building robust web systems, REST APIs, authentication flows, and data-driven applications. Experienced across the full stack with a systems engineering mindset.</p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary">&#9654; View Projects</a>
+        <a href="#contact" class="btn-secondary">&#9993; Get in Touch</a>
+      </div>
+    </div>
+    
+    <div class="hero-visual fade-up" style="transition-delay: 0.2s">
+      <div class="terminal-window">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="terminal-title">auth-guard.ts</div>
+        </div>
+        <div class="terminal-body">
+          <pre><code><span class="tok-comment">// Security Middleware</span>
+<span class="tok-key">export const</span> <span class="tok-func">authGuard</span> = <span class="tok-key">async</span> (req) => {
+  <span class="tok-key">const</span> token = req.headers.<span class="tok-func">get</span>(<span class="tok-str">"auth"</span>);
+  
+  <span class="tok-key">try</span> {
+    <span class="tok-key">const</span> decoded = <span class="tok-key">await</span> <span class="tok-func">verify</span>(token);
+    <span class="tok-key">return</span> decoded.<span class="tok-func">isValid</span> ? 
+      <span class="tok-func">next</span>() : <span class="tok-func">unauthorized</span>();
+  } <span class="tok-key">catch</span> (err) {
+    <span class="tok-key">return</span> <span class="tok-func">error</span>(<span class="tok-str">"Secure flow failed"</span>);
+  }
+}</code></pre>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -124,83 +163,31 @@
     <div class="skills-grid" data-stagger>
       <div class="skill-category">
         <div class="skill-cat-header">
-          <div class="skill-cat-icon">⚙️</div>
-          <span class="skill-cat-title">Backend & Runtime</span>
+          <div class="skill-cat-icon">🚀</div>
+          <span class="skill-cat-title">Node.js / Express</span>
         </div>
-        <div class="skill-tags">
-          <span class="skill-tag">Node.js</span>
-          <span class="skill-tag">Express.js</span>
-          <span class="skill-tag">Next.js 15</span>
-          <span class="skill-tag">REST API</span>
-          <span class="skill-tag">JWT</span>
-          <span class="skill-tag">NextAuth</span>
-          <span class="skill-tag">Bcrypt</span>
-        </div>
+        <p class="skill-desc">Building high-performance, secure, and scalable RESTful APIs and server-side logic.</p>
       </div>
       <div class="skill-category">
         <div class="skill-cat-header">
           <div class="skill-cat-icon">🗄️</div>
-          <span class="skill-cat-title">Databases</span>
+          <span class="skill-cat-title">Database (SQL/NoSQL)</span>
         </div>
-        <div class="skill-tags">
-          <span class="skill-tag">MySQL</span>
-          <span class="skill-tag">PostgreSQL</span>
-          <span class="skill-tag">Supabase</span>
-          <span class="skill-tag">SQL</span>
-          <span class="skill-tag">Schema Design</span>
-        </div>
+        <p class="skill-desc">Designing and optimizing database schemas for performance (MySQL, PostgreSQL, Supabase).</p>
       </div>
       <div class="skill-category">
         <div class="skill-cat-header">
-          <div class="skill-cat-icon">💻</div>
-          <span class="skill-cat-title">Languages</span>
+          <div class="skill-cat-icon">🐧</div>
+          <span class="skill-cat-title">Linux Server</span>
         </div>
-        <div class="skill-tags">
-          <span class="skill-tag">TypeScript</span>
-          <span class="skill-tag">JavaScript</span>
-          <span class="skill-tag">PHP</span>
-          <span class="skill-tag">Java</span>
-          <span class="skill-tag">Dart</span>
-        </div>
-      </div>
-      <div class="skill-category">
-        <div class="skill-cat-header">
-          <div class="skill-cat-icon">🔗</div>
-          <span class="skill-cat-title">Integrations</span>
-        </div>
-        <div class="skill-tags">
-          <span class="skill-tag">VNPay</span>
-          <span class="skill-tag">Momo</span>
-          <span class="skill-tag">Gemini AI</span>
-          <span class="skill-tag">Google APIs</span>
-          <span class="skill-tag">Webhooks</span>
-        </div>
-      </div>
-      <div class="skill-category">
-        <div class="skill-cat-header">
-          <div class="skill-cat-icon">🎨</div>
-          <span class="skill-cat-title">Frontend</span>
-        </div>
-        <div class="skill-tags">
-          <span class="skill-tag">React</span>
-          <span class="skill-tag">Next.js</span>
-          <span class="skill-tag">Tailwind CSS</span>
-          <span class="skill-tag">EJS</span>
-          <span class="skill-tag">HTML/CSS</span>
-        </div>
+        <p class="skill-desc">Linux systems administration, log management, and basic server security auditing.</p>
       </div>
       <div class="skill-category">
         <div class="skill-cat-header">
           <div class="skill-cat-icon">🛠️</div>
-          <span class="skill-cat-title">Tools & Workflow</span>
+          <span class="skill-cat-title">PM2 & Deployment</span>
         </div>
-        <div class="skill-tags">
-          <span class="skill-tag">Git</span>
-          <span class="skill-tag">GitHub</span>
-          <span class="skill-tag">Flutter</span>
-          <span class="skill-tag">Excel Automation</span>
-          <span class="skill-tag">Word Generation</span>
-        </div>
+        <p class="skill-desc">Operating and monitoring 24/7 production applications on Linux environments using PM2.</p>
       </div>
     </div>
   </div>
@@ -281,14 +268,15 @@
           </div>
         </div>
         <div class="project-card-body">
-          <h3 class="project-name">Teaching Workload Management System</h3>
-          <p class="project-desc">Internal academic management platform used by lecturers, staff, finance, and department heads. Automates teaching contract generation and overtime workload declaration.</p>
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="project-name">Teaching Workload Management System (TWMS)</h3>
+            <!-- <span class="tech-tag bg-green-900/30 text-green-400 border-green-800/50">🚀 Deployed via PM2</span> -->
+          </div>
+          <p class="project-desc text-gray-400">Internal academic platform for lecturers and staff, automating workload management and teaching contract workflows.</p>
           <ul class="project-highlights">
-            <li>RBAC for Lecturers, Department Heads, Finance & Admin</li>
-            <li>Automated Word contract generation for guest lecturers</li>
-            <li>Excel-based overtime workload declaration and export</li>
-            <li>Multi-step approval workflow (Dept → Training → Finance)</li>
-            <li>Teaching data management: classes, theses, workload tables</li>
+            <li><strong>Role:</strong> Backend Developer</li>
+            <li><strong>Tasks:</strong> Database design, data flow architecture, and RESTful API development.</li>
+            <li><strong>Deployment:</strong> Directly deployed and maintained the application on a Linux test server using PM2.</li>
           </ul>
         </div>
         <div class="project-card-footer">
@@ -460,6 +448,10 @@
 
 <!-- FOOTER -->
 <footer>
+  <div class="infra-badge mb-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-white/10 bg-black/40">
+    <span class="status-dot"></span>
+    <span class="text-[10px] font-mono tracking-tight text-gray-400 uppercase">All systems operational • Maintained with PM2 on Linux</span>
+  </div>
   <p>Designed &amp; built by <a href="https://github.com/linh404">linh404</a> &mdash; 2026</p>
 </footer>
 

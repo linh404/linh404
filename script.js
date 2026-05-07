@@ -90,3 +90,39 @@ if (typingEl) {
   }
   type();
 }
+
+// ─── THEME LOGIC (Auto + Manual) ───
+const themeToggle = document.getElementById('theme-toggle');
+
+function applyTheme(isLight) {
+  if (isLight) {
+    document.body.classList.add('light-mode');
+  } else {
+    document.body.classList.remove('light-mode');
+  }
+}
+
+function updateTheme() {
+  const savedTheme = localStorage.getItem('theme-preference');
+  if (savedTheme !== null) {
+    applyTheme(savedTheme === 'light');
+    return;
+  }
+
+  // Fallback to Vietnam Time auto-logic (GMT+7)
+  const now = new Date();
+  const vnTime = new Date(now.toLocaleString("en-US", {timeZone: "Asia/Ho_Chi_Minh"}));
+  const hour = vnTime.getHours();
+  applyTheme(hour >= 6 && hour < 18);
+}
+
+themeToggle.addEventListener('click', () => {
+  const isLight = document.body.classList.toggle('light-mode');
+  localStorage.setItem('theme-preference', isLight ? 'light' : 'dark');
+});
+
+// Check on load and every minute (if no manual override)
+updateTheme();
+setInterval(updateTheme, 60000);
+
+
