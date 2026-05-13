@@ -2,9 +2,9 @@
 
 I'm Linh.
 
-Backend-focused developer interested in web systems, APIs, authentication flows, and database-driven applications.
+Software Engineering-oriented developer with a strong interest in building practical web systems, APIs, authentication flows, and database-driven applications.
 
-I also work with Flutter and enjoy exploring different areas of software development.
+I mainly focus on backend development, while also working with Flutter and exploring mobile application development. I enjoy understanding how different parts of a software system work together, from user flows and APIs to data storage and application security.
 
 ---
 
@@ -20,8 +20,19 @@ I also work with Flutter and enjoy exploring different areas of software develop
 
 ---
 
+## Areas of Interest
+
+- Software Engineering
+- Backend Development
+- RESTful APIs
+- Authentication & Authorization
+- Database-driven Applications
+- Mobile Application Development
+
+---
+
 ## Contact
 
 - Portfolio: https://luuhoanglinh.id.vn
 - GitHub: https://github.com/linh404
-- Email: dev27012003@gmail.com
+- Email: luuhoanglinh.2003@gmail.com
