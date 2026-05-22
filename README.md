@@ -1,6 +1,4 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f172a,100:2563eb&height=180&section=header&text=Luu%20Hoang%20Linh&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Backend-oriented%20Developer%20%7C%20API%20%26%20Database%20Systems&descAlignY=58&descSize=16" alt="Header" />
-</p>
 
 <h1 align="center">Hi, I'm Linh 👋</h1>
 
@@ -117,22 +115,6 @@
       </a>
     </td>
   </tr>
-  <tr>
-    <td width="50%" align="center" valign="top">
-      <h3>Instructor Workload System</h3>
-      <p>Academic workload management system with practical requirements, data processing, and deadline-based development experience.</p>
-      <a href="https://github.com/linh404/instructor_web">
-        <img src="https://img.shields.io/badge/View%20repository-2563EB?style=flat-square&logo=github&logoColor=white" alt="Instructor Workload System" />
-      </a>
-    </td>
-    <td width="50%" align="center" valign="top">
-      <h3>CTL Web</h3>
-      <p>Web project experience involving frontend-backend integration, practical UI flow, and application-level feature implementation.</p>
-      <a href="https://github.com/linh404/CTL-web">
-        <img src="https://img.shields.io/badge/View%20repository-1D4ED8?style=flat-square&logo=github&logoColor=white" alt="CTL Web" />
-      </a>
-    </td>
-  </tr>
 </table>
 
 ---
@@ -176,9 +158,6 @@
   </a>
   <a href="https://luuhoanglinh.id.vn">
     <img src="https://img.shields.io/badge/Portfolio-luuhoanglinh.id.vn-0F172A?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
-  </a>
-  <a href="https://github.com/linh404">
-    <img src="https://img.shields.io/badge/GitHub-linh404-111827?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
   </a>
 </p>
 
