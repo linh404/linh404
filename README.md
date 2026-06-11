@@ -1,38 +1,36 @@
-# Hi there 👋
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-I'm Linh.
+## Getting Started
 
-Software Engineering-oriented developer with a strong interest in building practical web systems, APIs, authentication flows, and database-driven applications.
+First, run the development server:
 
-I mainly focus on backend development, while also working with Flutter and exploring mobile application development. I enjoy understanding how different parts of a software system work together, from user flows and APIs to data storage and application security.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
----
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Tech Stack
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-![ExpressJS](https://img.shields.io/badge/ExpressJS-black?style=for-the-badge&logo=express)
-![NodeJS](https://img.shields.io/badge/NodeJS-339933?style=for-the-badge&logo=node.js&logoColor=white)
-![ReactJS](https://img.shields.io/badge/ReactJS-20232A?style=for-the-badge&logo=react)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql)
-![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
-![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
----
+## Learn More
 
-## Areas of Interest
+To learn more about Next.js, take a look at the following resources:
 
-- Software Engineering
-- Backend Development
-- RESTful APIs
-- Authentication & Authorization
-- Database-driven Applications
-- Mobile Application Development
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
----
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Contact
+## Deploy on Vercel
 
-- Portfolio: https://luuhoanglinh.id.vn
-- GitHub: https://github.com/linh404
-- Email: luuhoanglinh.2003@gmail.com
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
