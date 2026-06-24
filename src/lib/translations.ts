@@ -153,6 +153,8 @@ export const translations = {
     contact_label: "Liên hệ",
     contact_title: "Hãy cùng hợp tác",
     contact_desc: "Tôi đang tìm vị trí thực tập Software Engineer hoặc dự án freelance nhỏ để tích luỹ kinh nghiệm. Nếu bạn cần người chịu khó học và không ngại làm — hãy liên hệ với tôi.",
+    contact_email_label: "Email",
+    contact_phone_label: "Số điện thoại",
     footer_infra: "Hệ thống hoạt động ổn định • Vận hành bằng PM2 trên Linux",
     footer_design: "Thiết kế & phát triển bởi",
     typing_phrases: [
@@ -323,6 +325,8 @@ export const translations = {
     contact_label: "Contact",
     contact_title: "Let's Work Together",
     contact_desc: "Looking for a software engineering internship or small freelance projects to gain real-world experience. If you need someone eager to learn and not afraid to get hands dirty — let's talk.",
+    contact_email_label: "Email",
+    contact_phone_label: "Phone",
     footer_infra: "All systems operational • Maintained with PM2 on Linux",
     footer_design: "Designed & built by",
     typing_phrases: [

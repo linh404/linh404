@@ -473,6 +473,47 @@ export default function Home() {
           </div>
         </FadeUp>
 
+        {/* CONTACT */}
+        <FadeUp id="contact" delay={0.2} className="flex flex-col gap-8">
+          <div className="flex flex-col gap-2">
+            <span className="font-mono text-accent text-sm">{t("contact_label")}</span>
+            <h3 className="text-3xl font-bold tracking-tight">{t("contact_title")}</h3>
+            <p className="text-muted">{t("contact_desc")}</p>
+          </div>
+
+          <div className="flex flex-col md:flex-row gap-6">
+            <a
+              href="mailto:luulinh4399@gmail.com"
+              className="flex items-center gap-4 border border-border bg-card hover:bg-border hover:border-zinc-500 active:scale-95 p-5 rounded-lg transition-all duration-200 group flex-1"
+            >
+              <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-colors">
+                <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-sm font-mono text-secondary">{t("contact_email_label")}</span>
+                <span className="text-foreground font-medium">luulinh4399@gmail.com</span>
+              </div>
+            </a>
+
+            <a
+              href="tel:0964131543"
+              className="flex items-center gap-4 border border-border bg-card hover:bg-border hover:border-zinc-500 active:scale-95 p-5 rounded-lg transition-all duration-200 group flex-1"
+            >
+              <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-colors">
+                <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                </svg>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-sm font-mono text-secondary">{t("contact_phone_label")}</span>
+                <span className="text-foreground font-medium">0964131543</span>
+              </div>
+            </a>
+          </div>
+        </FadeUp>
+
         {/* FOOTER */}
         <footer className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-secondary">
           <div className="flex items-center gap-2">
