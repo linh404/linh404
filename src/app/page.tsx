@@ -7,16 +7,14 @@ import { FadeUp } from "@/components/FadeUp";
 import { TypingText } from "@/components/TypingText";
 import { useI18n } from "@/components/I18nProvider";
 import { ApprovalFlow } from "@/components/ApprovalFlow";
+import { DepthBackground } from "@/components/DepthBackground";
 
 export default function Home() {
   const { t } = useI18n();
 
   return (
-    <main className="flex min-h-screen flex-col items-center px-6 pb-6 pt-4 md:px-24 md:pb-24 md:pt-4 selection:bg-accent selection:text-black">
-      {/* Background grid */}
-      <div className="fixed inset-0 z-[-1] overflow-hidden">
-        <div className="absolute inset-[-100%] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] animate-grid-flow"></div>
-      </div>
+    <main className="flex min-h-screen flex-col items-center px-6 pb-6 pt-4 md:px-24 md:pb-24 md:pt-4 selection:bg-accent selection:text-black parallax-fg">
+      <DepthBackground />
       
       <Navbar />
 
@@ -80,7 +78,7 @@ export default function Home() {
           </div>
         </FadeUp>
 
-        {/* PROJECTS - Flagship */}
+        {/* PROJECTS */}
         <FadeUp id="projects" delay={0.2} className="flex flex-col gap-8">
           <div className="flex flex-col gap-2">
             <span className="font-mono text-accent text-sm">{t("projects_label")}</span>
@@ -89,40 +87,49 @@ export default function Home() {
           </div>
           
           <div className="flex flex-col gap-12">
-            {/* TWMS */}
+            {/* ══════ TWMS ══════ */}
             <FadeUp delay={0.3}>
-              <div className="border border-border bg-card p-6 md:p-8 rounded-lg group hover:border-accent/50 hover:shadow-xl hover:shadow-accent/5 hover:-translate-y-1 transition-all duration-300">
+              <div className="depth-card relative border border-border bg-card p-6 md:p-8 rounded-lg group">
+                <div className="depth-glow" />
                 <div className="flex flex-col lg:flex-row gap-8 justify-between">
                   <div className="flex flex-col gap-4 flex-1">
                     <div className="flex items-center gap-3 flex-wrap">
                       <h4 className="text-2xl font-bold">Teaching Workload Management System (TWMS)</h4>
                       <span className="border border-accent/30 text-accent bg-accent/5 px-2 py-0.5 text-xs font-mono rounded">{t("project_flagship")}</span>
                     </div>
+
+                    {/* Timeline badge */}
+                    <div className="flex items-center gap-2 text-xs font-mono text-secondary bg-card-muted border border-border/50 px-3 py-1.5 rounded w-fit">
+                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                      {t("project_twms_timeline")}
+                    </div>
+
                     <p className="text-muted leading-relaxed" dangerouslySetInnerHTML={{ __html: t("project_twms_desc") }} />
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
                       <div className="border border-border/50 bg-card-muted p-4 rounded group-hover:border-accent/30 transition-colors duration-300">
                         <div className="font-mono text-accent text-xs mb-2">{t("project_architecture")}</div>
                         <ul className="text-sm text-secondary space-y-2">
-                          <li>• RESTful API Design</li>
-                          <li>• Complex Relational Database Modeling</li>
-                          <li>• Multi-step Approval Workflows</li>
+                          <li>• {t("project_twms_arch1")}</li>
+                          <li>• {t("project_twms_arch2")}</li>
+                          <li>• {t("project_twms_arch3")}</li>
                         </ul>
                       </div>
                       <div className="border border-border/50 bg-card-muted p-4 rounded group-hover:border-accent/30 transition-colors duration-300">
                         <div className="font-mono text-accent text-xs mb-2">{t("project_features")}</div>
                         <ul className="text-sm text-secondary space-y-2">
-                          <li>• RBAC &amp; ABAC Authorization</li>
-                          <li>• Automated Document Generation</li>
-                          <li>• Advanced Excel Import/Export</li>
+                          <li>• {t("project_twms_feat1")}</li>
+                          <li>• {t("project_twms_feat2")}</li>
+                          <li>• {t("project_twms_feat3")}</li>
                         </ul>
                       </div>
                     </div>
 
+
                     <ApprovalFlow />
                     
                     <div className="flex flex-wrap gap-2 mt-4">
-                      {["Node.js", "Express", "MySQL", "Excel.js", "PM2"].map(tech => (
+                      {[t("project_twms_tech1"), t("project_twms_tech2"), t("project_twms_tech3"), t("project_twms_tech4"), t("project_twms_tech5")].map(tech => (
                         <span key={tech} className="bg-border text-foreground px-3 py-1 text-xs font-mono rounded-sm hover:bg-accent hover:text-black hover:-translate-y-0.5 transition-all cursor-default">{tech}</span>
                       ))}
                     </div>
@@ -131,7 +138,7 @@ export default function Home() {
                       <Link href="/projects/twms" target="_blank" className="flex items-center gap-2 text-sm font-medium hover:text-accent transition-colors">
                         {t("project_live_demo")}
                       </Link>
-                      <a href="https://github.com/holyBeastt/ttcs" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-sm font-medium hover:text-accent transition-colors text-secondary">
+                      <a href="https://github.com/linh404/instructor_web" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-sm font-medium hover:text-accent transition-colors text-secondary">
                         {t("project_github")}
                       </a>
                     </div>
@@ -140,42 +147,283 @@ export default function Home() {
               </div>
             </FadeUp>
 
-            {/* Other Projects */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <FadeUp delay={0.4}>
-                <div className="border border-border bg-card p-6 rounded-lg flex flex-col gap-4 h-full hover:border-accent/50 hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/5 transition-all duration-300">
-                  <h4 className="text-xl font-bold">QuanTra Coffee</h4>
-                  <p className="text-sm text-muted flex-1">
-                    {t("project_qt_back_desc")}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs font-mono text-secondary">Next.js 15</span>
-                    <span className="text-xs font-mono text-secondary">MySQL</span>
-                    <span className="text-xs font-mono text-secondary">Payment Gateway</span>
+            {/* ══════ QUANTRA COFFEE ══════ */}
+            <FadeUp delay={0.35}>
+              <div className="depth-card relative border border-border bg-card p-6 md:p-8 rounded-lg group">
+                <div className="depth-glow" />
+                <div className="flex flex-col gap-4">
+                  <div className="flex items-center gap-3 flex-wrap">
+                    <h4 className="text-2xl font-bold">QuanTra Coffee</h4>
+                    <span className="border border-amber-500/30 text-amber-400 bg-amber-500/5 px-2 py-0.5 text-xs font-mono rounded">Full-stack</span>
                   </div>
-                  <div className="mt-2 flex flex-wrap gap-4">
-                    <a href="https://github.com/linh404/backend-quantra-coffee" target="_blank" rel="noreferrer" className="text-xs font-mono hover:text-accent transition-colors">{t("project_backend")}</a>
-                    <a href="https://github.com/linh404/frontend-quantra-coffee" target="_blank" rel="noreferrer" className="text-xs font-mono hover:text-accent transition-colors">{t("project_frontend")}</a>
-                  </div>
-                </div>
-              </FadeUp>
 
-              <FadeUp delay={0.5}>
-                <div className="border border-border bg-card p-6 rounded-lg flex flex-col gap-4 h-full hover:border-accent/50 hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/5 transition-all duration-300">
-                  <h4 className="text-xl font-bold">Android App API Server</h4>
-                  <p className="text-sm text-muted flex-1">
-                    {t("project_android_desc")}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs font-mono text-secondary">Node.js</span>
-                    <span className="text-xs font-mono text-secondary">REST API</span>
+                  {/* Timeline badge */}
+                  <div className="flex items-center gap-2 text-xs font-mono text-secondary bg-card-muted border border-border/50 px-3 py-1.5 rounded w-fit">
+                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    {t("project_qt_timeline")}
                   </div>
-                  <div className="mt-2">
-                    <a href="https://github.com/holyBeastt/android_basic_app_server" target="_blank" rel="noreferrer" className="text-xs font-mono hover:text-accent transition-colors">{t("project_source")}</a>
+
+                  <p className="text-muted leading-relaxed">{t("project_qt_back_desc")}</p>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+                    <div className="border border-border/50 bg-card-muted p-4 rounded group-hover:border-accent/30 transition-colors duration-300">
+                      <div className="font-mono text-accent text-xs mb-2">{t("project_architecture")}</div>
+                      <ul className="text-sm text-secondary space-y-2">
+                        <li>• {t("project_qt_arch1")}</li>
+                        <li>• {t("project_qt_arch2")}</li>
+                        <li>• {t("project_qt_arch3")}</li>
+                      </ul>
+                    </div>
+                    <div className="border border-border/50 bg-card-muted p-4 rounded group-hover:border-accent/30 transition-colors duration-300">
+                      <div className="font-mono text-accent text-xs mb-2">{t("project_features")}</div>
+                      <ul className="text-sm text-secondary space-y-2">
+                        <li>• {t("project_qt_feat1")}</li>
+                        <li>• {t("project_qt_feat2")}</li>
+                        <li>• {t("project_qt_feat3")}</li>
+                      </ul>
+                    </div>
+                  </div>
+
+
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    <span className="bg-border text-foreground px-3 py-1 text-xs font-mono rounded-sm hover:bg-accent hover:text-black hover:-translate-y-0.5 transition-all cursor-default">Next.js 15</span>
+                    <span className="bg-border text-foreground px-3 py-1 text-xs font-mono rounded-sm hover:bg-accent hover:text-black hover:-translate-y-0.5 transition-all cursor-default">TypeScript</span>
+                    <span className="bg-border text-foreground px-3 py-1 text-xs font-mono rounded-sm hover:bg-accent hover:text-black hover:-translate-y-0.5 transition-all cursor-default">Express</span>
+                    <span className="bg-border text-foreground px-3 py-1 text-xs font-mono rounded-sm hover:bg-accent hover:text-black hover:-translate-y-0.5 transition-all cursor-default">MySQL</span>
+                    <span className="bg-border text-foreground px-3 py-1 text-xs font-mono rounded-sm hover:bg-accent hover:text-black hover:-translate-y-0.5 transition-all cursor-default">Prisma</span>
+                    <span className="bg-border text-foreground px-3 py-1 text-xs font-mono rounded-sm hover:bg-accent hover:text-black hover:-translate-y-0.5 transition-all cursor-default">NextAuth</span>
+                    <span className="bg-border text-foreground px-3 py-1 text-xs font-mono rounded-sm hover:bg-accent hover:text-black hover:-translate-y-0.5 transition-all cursor-default">Gemini API</span>
+                    <span className="bg-border text-foreground px-3 py-1 text-xs font-mono rounded-sm hover:bg-accent hover:text-black hover:-translate-y-0.5 transition-all cursor-default">VNPay/MoMo</span>
+                  </div>
+
+                  <div className="flex items-center gap-4 mt-6">
+                    <a href="https://github.com/linh404/backend-quantra-coffee" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-sm font-medium hover:text-accent transition-colors text-secondary">
+                      {t("project_backend")}
+                    </a>
+                    <a href="https://github.com/linh404/frontend-quantra-coffee" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-sm font-medium hover:text-accent transition-colors text-secondary">
+                      {t("project_frontend")}
+                    </a>
                   </div>
                 </div>
-              </FadeUp>
-            </div>
+              </div>
+            </FadeUp>
+
+            {/* ══════ KMA-FREERTOS ══════ */}
+            <FadeUp delay={0.4}>
+              <div className="depth-card relative border border-border bg-card p-6 md:p-8 rounded-lg group">
+                <div className="depth-glow" />
+                <div className="flex flex-col gap-4">
+                  <div className="flex items-center gap-3 flex-wrap">
+                    <h4 className="text-2xl font-bold">KMA-FreeRTOS</h4>
+                    <span className="border border-emerald-500/30 text-emerald-400 bg-emerald-500/5 px-2 py-0.5 text-xs font-mono rounded">IoT</span>
+                  </div>
+
+                  {/* Timeline badge */}
+                  <div className="flex items-center gap-2 text-xs font-mono text-secondary bg-card-muted border border-border/50 px-3 py-1.5 rounded w-fit">
+                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    {t("project_freertos_timeline")}
+                  </div>
+
+                  <p className="text-muted leading-relaxed">{t("project_freertos_desc")}</p>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+                    <div className="border border-border/50 bg-card-muted p-4 rounded group-hover:border-accent/30 transition-colors duration-300">
+                      <div className="font-mono text-accent text-xs mb-2">{t("project_architecture")}</div>
+                      <ul className="text-sm text-secondary space-y-2">
+                        <li>• {t("project_freertos_arch1")}</li>
+                        <li>• {t("project_freertos_arch2")}</li>
+                        <li>• {t("project_freertos_arch3")}</li>
+                      </ul>
+                    </div>
+                    <div className="border border-border/50 bg-card-muted p-4 rounded group-hover:border-accent/30 transition-colors duration-300">
+                      <div className="font-mono text-accent text-xs mb-2">{t("project_features")}</div>
+                      <ul className="text-sm text-secondary space-y-2">
+                        <li>• {t("project_freertos_feat1")}</li>
+                        <li>• {t("project_freertos_feat2")}</li>
+                        <li>• {t("project_freertos_feat3")}</li>
+                      </ul>
+                    </div>
+                  </div>
+
+
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    <span className="bg-border text-foreground px-3 py-1 text-xs font-mono rounded-sm hover:bg-accent hover:text-black hover:-translate-y-0.5 transition-all cursor-default">Flutter</span>
+                    <span className="bg-border text-foreground px-3 py-1 text-xs font-mono rounded-sm hover:bg-accent hover:text-black hover:-translate-y-0.5 transition-all cursor-default">Firebase RTDB</span>
+                    <span className="bg-border text-foreground px-3 py-1 text-xs font-mono rounded-sm hover:bg-accent hover:text-black hover:-translate-y-0.5 transition-all cursor-default">ESP32</span>
+                    <span className="bg-border text-foreground px-3 py-1 text-xs font-mono rounded-sm hover:bg-accent hover:text-black hover:-translate-y-0.5 transition-all cursor-default">FreeRTOS</span>
+                    <span className="bg-border text-foreground px-3 py-1 text-xs font-mono rounded-sm hover:bg-accent hover:text-black hover:-translate-y-0.5 transition-all cursor-default">fl_chart</span>
+                  </div>
+
+                  <div className="flex items-center gap-4 mt-6">
+                    <a href="https://github.com/linh404/kma-freertos" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-sm font-medium hover:text-accent transition-colors text-secondary">
+                      {t("project_github")}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </FadeUp>
+
+            {/* ══════ CTL STORE ══════ */}
+            <FadeUp delay={0.45}>
+              <div className="depth-card relative border border-border bg-card p-6 md:p-8 rounded-lg group">
+                <div className="depth-glow" />
+                <div className="flex flex-col gap-4">
+                  <div className="flex items-center gap-3 flex-wrap">
+                    <h4 className="text-2xl font-bold">CTL Store</h4>
+                    <span className="border border-purple-500/30 text-purple-400 bg-purple-500/5 px-2 py-0.5 text-xs font-mono rounded">E-commerce</span>
+                  </div>
+
+                  <div className="flex items-center gap-2 text-xs font-mono text-secondary bg-card-muted border border-border/50 px-3 py-1.5 rounded w-fit">
+                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    {t("project_ctl_timeline")}
+                  </div>
+
+                  <p className="text-muted leading-relaxed">{t("project_ctl_desc")}</p>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+                    <div className="border border-border/50 bg-card-muted p-4 rounded group-hover:border-accent/30 transition-colors duration-300">
+                      <div className="font-mono text-accent text-xs mb-2">{t("project_architecture")}</div>
+                      <ul className="text-sm text-secondary space-y-2">
+                        <li>• {t("project_ctl_arch1")}</li>
+                        <li>• {t("project_ctl_arch2")}</li>
+                        <li>• {t("project_ctl_arch3")}</li>
+                      </ul>
+                    </div>
+                    <div className="border border-border/50 bg-card-muted p-4 rounded group-hover:border-accent/30 transition-colors duration-300">
+                      <div className="font-mono text-accent text-xs mb-2">{t("project_features")}</div>
+                      <ul className="text-sm text-secondary space-y-2">
+                        <li>• {t("project_ctl_feat1")}</li>
+                        <li>• {t("project_ctl_feat2")}</li>
+                        <li>• {t("project_ctl_feat3")}</li>
+                      </ul>
+                    </div>
+                  </div>
+
+
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    <span className="bg-border text-foreground px-3 py-1 text-xs font-mono rounded-sm hover:bg-accent hover:text-black hover:-translate-y-0.5 transition-all cursor-default">PHP</span>
+                    <span className="bg-border text-foreground px-3 py-1 text-xs font-mono rounded-sm hover:bg-accent hover:text-black hover:-translate-y-0.5 transition-all cursor-default">MySQL</span>
+                    <span className="bg-border text-foreground px-3 py-1 text-xs font-mono rounded-sm hover:bg-accent hover:text-black hover:-translate-y-0.5 transition-all cursor-default">MVC</span>
+                  </div>
+
+                  <div className="flex items-center gap-4 mt-6">
+                    <Link href="https://ctl01.infy.uk/" target="_blank" className="flex items-center gap-2 text-sm font-medium hover:text-accent transition-colors">
+                      {t("project_live_demo")}
+                    </Link>
+                    <a href="https://github.com/linh404/CTL-web" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-sm font-medium hover:text-accent transition-colors text-secondary">
+                      {t("project_source")}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </FadeUp>
+
+            {/* ══════ OPTIMIZE GRAPHICS ANDROID ══════ */}
+            <FadeUp delay={0.5}>
+              <div className="depth-card relative border border-border bg-card p-6 md:p-8 rounded-lg group">
+                <div className="depth-glow" />
+                <div className="flex flex-col gap-4">
+                  <div className="flex items-center gap-3 flex-wrap">
+                    <h4 className="text-2xl font-bold">Optimize Graphics Android</h4>
+                    <span className="border border-rose-500/30 text-rose-400 bg-rose-500/5 px-2 py-0.5 text-xs font-mono rounded">Performance</span>
+                  </div>
+
+                  <div className="flex items-center gap-2 text-xs font-mono text-secondary bg-card-muted border border-border/50 px-3 py-1.5 rounded w-fit">
+                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    {t("project_android_timeline")}
+                  </div>
+
+                  <p className="text-muted leading-relaxed">{t("project_android_desc")}</p>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+                    <div className="border border-border/50 bg-card-muted p-4 rounded group-hover:border-accent/30 transition-colors duration-300">
+                      <div className="font-mono text-accent text-xs mb-2">{t("project_architecture")}</div>
+                      <ul className="text-sm text-secondary space-y-2">
+                        <li>• {t("project_android_arch1")}</li>
+                        <li>• {t("project_android_arch2")}</li>
+                        <li>• {t("project_android_arch3")}</li>
+                      </ul>
+                    </div>
+                    <div className="border border-border/50 bg-card-muted p-4 rounded group-hover:border-accent/30 transition-colors duration-300">
+                      <div className="font-mono text-accent text-xs mb-2">{t("project_features")}</div>
+                      <ul className="text-sm text-secondary space-y-2">
+                        <li>• {t("project_android_feat1")}</li>
+                        <li>• {t("project_android_feat2")}</li>
+                        <li>• {t("project_android_feat3")}</li>
+                      </ul>
+                    </div>
+                  </div>
+
+
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    <span className="bg-border text-foreground px-3 py-1 text-xs font-mono rounded-sm hover:bg-accent hover:text-black hover:-translate-y-0.5 transition-all cursor-default">Flutter</span>
+                    <span className="bg-border text-foreground px-3 py-1 text-xs font-mono rounded-sm hover:bg-accent hover:text-black hover:-translate-y-0.5 transition-all cursor-default">OpenGL ES</span>
+                    <span className="bg-border text-foreground px-3 py-1 text-xs font-mono rounded-sm hover:bg-accent hover:text-black hover:-translate-y-0.5 transition-all cursor-default">Canvas 2D</span>
+                    <span className="bg-border text-foreground px-3 py-1 text-xs font-mono rounded-sm hover:bg-accent hover:text-black hover:-translate-y-0.5 transition-all cursor-default">Image Processing</span>
+                  </div>
+
+                  <div className="flex items-center gap-4 mt-6">
+                    <a href="https://github.com/linh404/optimize-graphics-android" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-sm font-medium hover:text-accent transition-colors text-secondary">
+                      {t("project_source")}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </FadeUp>
+
+            {/* ══════ SMART CARD ══════ */}
+            <FadeUp delay={0.55}>
+              <div className="depth-card relative border border-border bg-card p-6 md:p-8 rounded-lg group">
+                <div className="depth-glow" />
+                <div className="flex flex-col gap-4">
+                  <div className="flex items-center gap-3 flex-wrap">
+                    <h4 className="text-2xl font-bold">Smart Card Programming</h4>
+                    <span className="border border-sky-500/30 text-sky-400 bg-sky-500/5 px-2 py-0.5 text-xs font-mono rounded">Security</span>
+                  </div>
+
+                  <div className="flex items-center gap-2 text-xs font-mono text-secondary bg-card-muted border border-border/50 px-3 py-1.5 rounded w-fit">
+                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    {t("project_smartcard_timeline")}
+                  </div>
+
+                  <p className="text-muted leading-relaxed">{t("project_smartcard_desc")}</p>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+                    <div className="border border-border/50 bg-card-muted p-4 rounded group-hover:border-accent/30 transition-colors duration-300">
+                      <div className="font-mono text-accent text-xs mb-2">{t("project_architecture")}</div>
+                      <ul className="text-sm text-secondary space-y-2">
+                        <li>• {t("project_smartcard_arch1")}</li>
+                        <li>• {t("project_smartcard_arch2")}</li>
+                        <li>• {t("project_smartcard_arch3")}</li>
+                      </ul>
+                    </div>
+                    <div className="border border-border/50 bg-card-muted p-4 rounded group-hover:border-accent/30 transition-colors duration-300">
+                      <div className="font-mono text-accent text-xs mb-2">{t("project_features")}</div>
+                      <ul className="text-sm text-secondary space-y-2">
+                        <li>• {t("project_smartcard_feat1")}</li>
+                        <li>• {t("project_smartcard_feat2")}</li>
+                        <li>• {t("project_smartcard_feat3")}</li>
+                      </ul>
+                    </div>
+                  </div>
+
+
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    <span className="bg-border text-foreground px-3 py-1 text-xs font-mono rounded-sm hover:bg-accent hover:text-black hover:-translate-y-0.5 transition-all cursor-default">Java Card</span>
+                    <span className="bg-border text-foreground px-3 py-1 text-xs font-mono rounded-sm hover:bg-accent hover:text-black hover:-translate-y-0.5 transition-all cursor-default">APDU</span>
+                    <span className="bg-border text-foreground px-3 py-1 text-xs font-mono rounded-sm hover:bg-accent hover:text-black hover:-translate-y-0.5 transition-all cursor-default">RSA</span>
+                    <span className="bg-border text-foreground px-3 py-1 text-xs font-mono rounded-sm hover:bg-accent hover:text-black hover:-translate-y-0.5 transition-all cursor-default">KDF</span>
+                    <span className="bg-border text-foreground px-3 py-1 text-xs font-mono rounded-sm hover:bg-accent hover:text-black hover:-translate-y-0.5 transition-all cursor-default">Embedded</span>
+                  </div>
+
+                  <div className="flex items-center gap-4 mt-6">
+                    <a href="https://github.com/linh404/smart_card" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-sm font-medium hover:text-accent transition-colors text-secondary">
+                      {t("project_source")}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </FadeUp>
           </div>
         </FadeUp>
 
@@ -203,11 +451,23 @@ export default function Home() {
               <div className="absolute w-3 h-3 bg-border -left-[29px] md:-left-[45px] top-1.5 rounded-sm"></div>
               <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-4 mb-2">
                 <h4 className="text-xl font-bold">{t("exp_2_role")}</h4>
-                <span className="text-secondary font-mono text-sm">2023 — 2024</span>
+                <span className="text-secondary font-mono text-sm">2025 — 2026</span>
               </div>
               <p className="text-secondary text-sm font-mono mb-4">{t("exp_2_company")}</p>
               <p className="text-muted leading-relaxed">
                 {t("exp_2_desc")}
+              </p>
+            </FadeUp>
+
+            <FadeUp delay={0.45} className="relative">
+              <div className="absolute w-3 h-3 bg-border -left-[29px] md:-left-[45px] top-1.5 rounded-sm"></div>
+              <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-4 mb-2">
+                <h4 className="text-xl font-bold">{t("exp_3_role")}</h4>
+                <span className="text-secondary font-mono text-sm">2024 - 2025</span>
+              </div>
+              <p className="text-secondary text-sm font-mono mb-4">{t("exp_3_company")}</p>
+              <p className="text-muted leading-relaxed">
+                {t("exp_3_desc")}
               </p>
             </FadeUp>
           </div>
